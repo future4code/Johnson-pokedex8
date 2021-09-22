@@ -1,9 +1,12 @@
 # POKEDEX
 
+Apresentação do projeto...
+
 Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+- Isis Pedroni
+- Leonardo Mosso
+- Luana Ferreira
+- Luis Vieira
 
 Link do Surge: www.link.com.br
 
@@ -14,3 +17,6 @@ O que funciona:
 O que não funciona: 
 - Item 3
 - Item 4
+
+Prints da Tela: 
+- Item 3
