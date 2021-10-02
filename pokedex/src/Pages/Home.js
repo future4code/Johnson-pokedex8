@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import GlobalComponents from "../GlobalComponents/GlobalComponent";
 import styled from "styled-components";
-import { useHistory } from "react-router";
+import { useHistory, useParams } from "react-router";
 
 const ImagePokemon = styled.img `
     width: 20px,
@@ -26,9 +26,14 @@ export const HomePage = () => {
     const { pokemonInformation } = useContext(GlobalComponents)
     console.log(pokemonInformation)
     
+    let {name} = useParams()
+
+
     const history = useHistory()
-    const changeToPokedex = () => {
-        history.push("/pokemonDetails")
+    const changeToDetails = (name) => {
+        history.push(`/pokemonDetails/${name}`)
+        console.log(name)
+
 
     }
     return (
@@ -43,7 +48,7 @@ export const HomePage = () => {
                    </div>
                    <div>
                    <button>Adicionar a Pokedex</button>
-                   <button onClick={changeToPokedex}>Ver Detalhes</button>
+                   <button onClick={() => changeToDetails(pokemons.name)}>Ver Detalhes</button>
                    </div>
                     
                    
