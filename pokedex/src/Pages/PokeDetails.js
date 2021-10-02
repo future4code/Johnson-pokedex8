@@ -20,7 +20,7 @@ const PokemonDetails = () => {
             getPokemon()
     }, [])
 
-    const getPokemon = () =>{ axios.get(`${BASE_URL}/pokemon/${pathParams.name}`)
+    const getPokemon = () =>{ axios.get(`${BASE_URL}/pokemon/${pathParams}`)
     .then((response)=>{
         setPokemons(response.data)
     }).catch((err)=>{
@@ -34,6 +34,7 @@ const PokemonDetails = () => {
     return(
         <div>
             <p>PokemonDetails</p>
+            <p>{pathParams.name}</p>
             <button onClick={goBack}>Voltar</button>
         </div>
     )
@@ -41,4 +42,3 @@ const PokemonDetails = () => {
 
 export default PokemonDetails;
 
-//criair um estado pra guardar informaçoes requisiçao axios!! usando path.names etc... puxanbdo inforçoes força
