@@ -27,7 +27,7 @@ const PokemonCard = styled.div `
 
 export const HomePage = () => {
     const { pokemonInformation } = useContext(GlobalComponents)
-    console.log(pokemonInformation)
+    console.log("information",pokemonInformation)
     
     let {name} = useParams()
 
