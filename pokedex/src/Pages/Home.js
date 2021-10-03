@@ -2,6 +2,9 @@ import React, { useContext } from "react";
 import GlobalComponents from "../GlobalComponents/GlobalComponent";
 import styled from "styled-components";
 import { useHistory, useParams } from "react-router";
+import { HeaderContainer } from "./styled";
+
+
 
 const ImagePokemon = styled.img `
     width: 20px,
