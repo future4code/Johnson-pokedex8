@@ -2,7 +2,8 @@ import React, { useContext , useEffect, useState} from "react";
 import GlobalComponents from "../GlobalComponents/GlobalComponent";
 import { useHistory, useParams} from "react-router";
 import { BASE_URL } from "../API/api";
-import axios from "axios"
+import axios from "axios";
+import styles, {AddButton, FooterContainer, BackButton, HeaderContainer, ImagePokemon, PokeName, DetailsBox,Container, DetailsContainer, ImagePokemonDetails } from "./styles";
 
 
 const PokemonDetails = () => {
@@ -85,46 +86,56 @@ const PokemonDetails = () => {
     return(
 
 
-        <div>
-            <p>PokemonDetails</p>
-            <button onClick={goBack}>Voltar</button>
-            <p>{pathParams.name}</p>
+    <div>
+            <HeaderContainer>
+            <h3>PokemonDetails</h3>
+            <BackButton onClick={goBack}>Voltar</BackButton>
+            </HeaderContainer>
+
             {selectedPokemon && (
-                <div>
-            <img src={selectedPokemon.sprites.front_default} />
-            <img src={selectedPokemon.sprites.back_default} />
-            <div>
-                <h3> habilidades </h3>
-            <p>{selectedPokemon.abilities[0].ability.name}</p>
-            <p>{selectedPokemon.abilities[1].ability.name}</p>
+                <Container>
 
-            </div>
+            <DetailsContainer>   
+                <PokeName>{pathParams.name}</PokeName>
+                <ImagePokemonDetails src={selectedPokemon.sprites.front_default} />
+                <ImagePokemonDetails src={selectedPokemon.sprites.back_default} />
+            </DetailsContainer>            
+            
+            <DetailsBox>
+                    <h3> Habilidades: </h3>
+                <p>{selectedPokemon.abilities[0].ability.name}</p>
+                <p>{selectedPokemon.abilities[1].ability.name}</p>
 
-            <div>
-                <h3> Pricnipais Ataques </h3>
-            <p>{selectedPokemon.moves[0].move.name}</p>
-            <p>{selectedPokemon.moves[1].move.name}</p>
-            <p>{selectedPokemon.moves[2].move.name}</p>
-            <p>{selectedPokemon.moves[3].move.name}</p>
-            <p>{selectedPokemon.moves[4].move.name}</p>
+            </DetailsBox>
 
-            </div>
+            <DetailsBox>
+                    <h3> Principais Ataques: </h3>
+                <p>{selectedPokemon.moves[0].move.name}</p>
+                <p>{selectedPokemon.moves[1].move.name}</p>
+                <p>{selectedPokemon.moves[2].move.name}</p>
+                <p>{selectedPokemon.moves[3].move.name}</p>
+                <p>{selectedPokemon.moves[4].move.name}</p>
 
-            <div>
-                <h3> Poderes </h3>
-            <p>{selectedPokemon.stats[0].stat.name}: {selectedPokemon.stats[0].base_stat} </p>
-            <p>{selectedPokemon.stats[1].stat.name}: {selectedPokemon.stats[1].base_stat} </p>
-            <p>{selectedPokemon.stats[2].stat.name}: {selectedPokemon.stats[2].base_stat} </p>
-            <p>{selectedPokemon.stats[3].stat.name}: {selectedPokemon.stats[3].base_stat} </p>
-            <p>{selectedPokemon.stats[4].stat.name}: {selectedPokemon.stats[4].base_stat} </p>
-            <p>{selectedPokemon.stats[5].stat.name}: {selectedPokemon.stats[5].base_stat} </p>
+            </DetailsBox>
 
-            </div>
+            <DetailsBox>
+                    <h3> Poderes: </h3>
+                <p>{selectedPokemon.stats[0].stat.name}: {selectedPokemon.stats[0].base_stat} </p>
+                <p>{selectedPokemon.stats[1].stat.name}: {selectedPokemon.stats[1].base_stat} </p>
+                <p>{selectedPokemon.stats[2].stat.name}: {selectedPokemon.stats[2].base_stat} </p>
+                <p>{selectedPokemon.stats[3].stat.name}: {selectedPokemon.stats[3].base_stat} </p>
+                <p>{selectedPokemon.stats[4].stat.name}: {selectedPokemon.stats[4].base_stat} </p>
+                <p>{selectedPokemon.stats[5].stat.name}: {selectedPokemon.stats[5].base_stat} </p>
 
-            </div>
+            </DetailsBox>
+            <FooterContainer>
+                <AddButton onClick={goBack}>Voltar</AddButton>
+                <p>Desenvolvido por: Isis Pedroni, Leonardo Mosso, Luana Ferreira e Luis Vieira</p>
+            </FooterContainer>
+        </Container>
             )}
            
-        </div>    
+    </div>    
         
         
         
