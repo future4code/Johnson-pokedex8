@@ -9,7 +9,6 @@ const TelaPokemons = styled.div `
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
 
-
 `
 const PokemonCard = styled.div `
     display: flex;
@@ -34,7 +33,6 @@ export const HomePage = () => {
     }
     const changeToPokedex = (name) => {
         history.push(`/pokedex`)
-        
 
     }
  
@@ -54,7 +52,6 @@ export const HomePage = () => {
                 <CardDiv>
                 <h3>{pokemons.name}</h3>
                 </CardDiv>
-                
                    
                 <CardDiv>
                    <ImagePokemon src={pokemons.sprites.front_default} />
@@ -70,7 +67,7 @@ export const HomePage = () => {
         })} 
         </TelaPokemons>
         <FooterContainer>
-                <AddButton>Home</AddButton>
+                <AddButton>Atualizar</AddButton>
                 <p>Desenvolvido por: Isis Pedroni, Leonardo Mosso, Luana Ferreira e Luis Vieira</p>
         </FooterContainer>
     </Container> 
